@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#0b0d10">
+  <title>bike-bpm</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <span class="brand">bike-bpm</span>
+      <span id="confidence-dot" class="dot dot-off" aria-label="confidence"></span>
+    </header>
+
+    <section class="readout">
+      <div id="bpm" class="bpm bpm-dim" aria-live="polite">&mdash;</div>
+      <div id="alternates" class="alternates">half &mdash; &middot; double &mdash;</div>
+      <div id="cadence" class="cadence">suggested cadence: &mdash;</div>
+    </section>
+
+    <div id="status" class="status" role="status"></div>
+
+    <div id="diag" class="diag" hidden>
+      <div class="meter" aria-label="input level">
+        <div id="meter-fill" class="meter-fill"></div>
+      </div>
+      <div id="mic-label" class="mic-label"></div>
+    </div>
+
+    <footer class="controls">
+      <button id="start" class="btn btn-start" type="button">Start listening</button>
+      <button id="stop" class="btn btn-stop" type="button" hidden>Stop</button>
+    </footer>
+  </main>
+
+  <script type="module">
+    import { init } from './src/app.js';
+    init();
+  </script>
+</body>
+</html>
