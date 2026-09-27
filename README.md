@@ -14,6 +14,10 @@ npm start          # serves on http://localhost:8321
 npm test           # DSP unit tests against synthetic audio (node --test)
 ```
 
+`npm start` uses Python's built-in static server (`python3 -m http.server`),
+so it needs Python 3; any other static-file server works too. Tests need
+Node.js 22+.
+
 Open http://localhost:8321, tap **Start listening**, and grant microphone
 access. Microphone capture requires a secure context (localhost or HTTPS).
 
